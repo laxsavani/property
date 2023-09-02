@@ -49,7 +49,7 @@ app.post('/', async (req, res) => {
       await userData.save();
   
       // Data saved successfully
-      res.json({ message: 'Data saved successfully' });
+      res.redirect('back')
   
       // Send the email using Nodemailer
       const transporter = nodemailer.createTransport({
@@ -71,7 +71,7 @@ app.post('/', async (req, res) => {
           if (err) {
             console.error('Error sending email:', err);
           } else {
-            console.log('Email sent:', info.response);
+            console.log('Email sent:',);
           }
         }
       );
